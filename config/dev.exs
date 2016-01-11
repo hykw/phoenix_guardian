@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_guardian, PhoenixGuardian.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("USER"),
+  username: "testuser",
   password: "",
-  database: "phoenix_guardian_dev",
-  hostname: "localhost",
+  database: "phoenix_guardian",
+  hostname: "127.0.0.1",
   pool_size: 10

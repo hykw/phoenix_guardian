@@ -1,5 +1,52 @@
 # PhoenixGuardian
 
+## git clone 後の稼働確認手順
+
+### MySQLに変更
+- [Using MySQL](http://www.phoenixframework.org/docs/using-mysql)
+
+map を使ってるので、PostgreSQL 9.4 に上げる必要がある。
+
+http://weblabo.oscasierra.net/postgresql-installing-postgresql9-centos6-1/
+
+yum -y localinstall http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm
+
+
+### その他
+
+```bash
+$ mix deps.get
+$ mix deps.compile
+
+$ npm install
+```
+
+- DB 作成
+
+```bash
+$ su - postgres
+$ createuser -a -d -U testuser -P
+
+$ su - testuser
+$ createdb phoenix_guardian
+$ psql -l
+```
+
+- config/dev.exs 編集
+
+```bash
+$ mix ecto.create
+$ mix ecto.migrate
+```
+
+
+
+
+
+
+=========
+
+
 [![Build Status](https://travis-ci.org/hassox/phoenix_guardian.svg?branch=ueberauth-guardian)](https://travis-ci.org/hassox/phoenix_guardian)
 
 Provides an example implementation for authentication in Phoneix applications

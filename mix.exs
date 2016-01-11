@@ -54,7 +54,6 @@ defmodule PhoenixGuardian.Mixfile do
     [{:ex_machina, "~>0.6", only: [:dev, :test]},
      {:phoenix, "~> 1.1.0"},
      {:phoenix_ecto, "~> 2.0"},
-     {:postgrex, ">= 0.0.0", override: true},
      {:phoenix_html, "~> 2.3"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:guardian_db, "0.4.0"},
@@ -64,7 +63,10 @@ defmodule PhoenixGuardian.Mixfile do
      {:ueberauth_identity, "~>0.2.1"},
      {:ueberauth_slack, "~>0.2.0"},
      {:comeonin, "~> 1.6"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:postgrex, ">= 0.0.0", override: true}
+
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
